@@ -10,6 +10,7 @@ namespace ATM
     {
         static void Main(string[] args)
         {
+            var racun = 0;
         }
     }
 }
