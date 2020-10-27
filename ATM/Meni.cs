@@ -11,7 +11,7 @@ namespace ATM
         private void PrikaziMeni()
         {
             Console.WriteLine("Ovo je meni");
-            Console.WriteLine("Muahmed");
+            Console.WriteLine("Muahmedd");
             Console.ReadLine();
             //ovo je obicni komentar
         }
