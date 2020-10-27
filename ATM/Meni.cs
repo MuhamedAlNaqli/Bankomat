@@ -13,6 +13,7 @@ namespace ATM
             Console.WriteLine("Ovo je meni");
             Console.WriteLine("Muahmedd");
             Console.ReadLine();
+            Console.WriteLine("Ovo je na test branchu");
             //ovo je obicni komentar
         }
         
