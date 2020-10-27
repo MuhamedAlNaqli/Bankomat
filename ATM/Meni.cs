@@ -12,8 +12,14 @@ namespace ATM
         {
             Console.WriteLine("Ovo je meni");
             Console.ReadLine();
+            //ovo je obicni komentar
         }
-            
+        
+        //git pull origin main
+        //git status
+        //git add .
+        //git commit -m "neka poruka"
+        //git push origin main    
 
     }
 }
