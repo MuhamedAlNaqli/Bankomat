@@ -10,11 +10,7 @@ namespace ATM
     {
         private void PrikaziMeni()
         {
-            Console.WriteLine("Ovo je meni");
-            Console.WriteLine("Muahmedd");
-            Console.ReadLine();
-            Console.WriteLine("Ovo je na test branchu");
-            //ovo je obicni komentar
+            //Napraviti meni prikaz za bankomat
         }
         
         //git pull origin main
