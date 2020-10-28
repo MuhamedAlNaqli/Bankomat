@@ -8,9 +8,16 @@ namespace ATM
 {
     public class Meni
     {
-        private void PrikaziMeni()
+        public void PrikaziMeni()
         {
-            //Napraviti meni prikaz za bankomat
+            Console.WriteLine("Dobro došli u ATM bankomat");
+            Console.WriteLine("Izaberite opciju");
+            Console.WriteLine("1............ Uplata");
+            Console.WriteLine("2............Isplata");
+            Console.WriteLine("3............Stanje računa");
+            Console.WriteLine("4............Izlaz");
+            Console.ReadLine();
+            
         }
         
         //git pull origin main
