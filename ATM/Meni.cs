@@ -19,6 +19,10 @@ namespace ATM
             Console.ReadLine();
             
         }
+
+        //Napraviti klasu Authentication koja ce biti zaduzena za autentikaciju korisnika
+            //Unutar klase potrebno dodati funkciju IsPinValid koja prima string, a treba da vrati bool
+                //Funkciju implementirati na nacin da provjeri da li je uneseni string == "0000", ako jeste vratiti true, ako nije vratiti false
         
         //git pull origin main
         //git status
