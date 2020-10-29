@@ -17,6 +17,7 @@ namespace ATM
             Console.WriteLine("3............Stanje računa");
             Console.WriteLine("4............Izlaz");
             Console.ReadLine();
+            //komentar
         }
 
         //git pull origin main
