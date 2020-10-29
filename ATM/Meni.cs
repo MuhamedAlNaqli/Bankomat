@@ -17,12 +17,6 @@ namespace ATM
             Console.WriteLine("3............Stanje računa");
             Console.WriteLine("4............Izlaz");
             Console.ReadLine();
-        }
-
-        //git pull origin main
-        //git status
-        //git add .
-        //git commit -m "neka poruka"
-        //git push origin main    
+        }  
     }
 }
