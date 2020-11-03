@@ -12,7 +12,7 @@ namespace ATM
         public void LoginMeni()
         {
             Console.WriteLine("Dobro dosli u ATM, molimo vas unesite vaš pin:");
-            Console.ReadLine();
+            
         }
             
         public void PrikaziMeni()
