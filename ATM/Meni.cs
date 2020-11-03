@@ -8,6 +8,13 @@ namespace ATM
 {
     public class Meni
     {
+
+        public void LoginMeni()
+        {
+            Console.WriteLine("Dobro dosli u ATM, molimo vas unesite vaš pin:");
+            Console.ReadLine();
+        }
+            
         public void PrikaziMeni()
         {
             Console.WriteLine("Dobro došli u ATM bankomat");
