@@ -15,14 +15,20 @@ namespace ATM
         //git push origin main  
 
         //zadaci
-        
-        //2. Omoguciti korisniku da unese pin sa "Main" funkcije i da se taj pin posalje u funkciju "IsPinValid"
-                //2.1 Ako je pin validan ispisati korisniku glavni meni
-                //2.2 Ako pin nije validan ispisati korisniku da nije validan pin 
-        //3. Omoguciti korisniku da unosi pin sve dok je netacan
 
+        //2. Omoguciti korisniku da unese pin sa "Main" funkcije i da se taj pin posalje u funkciju "IsPinValid"
+        //2.1 Ako je pin validan ispisati korisniku glavni meni
+        //2.2 Ako pin nije validan ispisati korisniku da nije validan pin 
+        //3. Omoguciti korisniku da unosi pin sve dok je netacan
+        static string pin = "";
+        static Meni Menimanager = new Meni();
         static void Main(string[] args)
         {
+            Menimanager.LoginMeni();
+
+            Console.WriteLine(pin);
+
+            Console.ReadLine();
 
         }
     }

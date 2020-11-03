@@ -10,6 +10,7 @@ namespace ATM
     {
         public bool IsPinValid (string pin)
         {
+
             if (pin != "0000")
             {
                 Console.WriteLine("Pin nije tacan!");
