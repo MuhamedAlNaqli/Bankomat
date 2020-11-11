@@ -26,13 +26,13 @@ namespace ATM
         
         static void Main(string[] args)
         {
-            Menimanager.LoginMeni();
-            pin = Console.ReadLine();
-            bool IsPinValid = authmanager.IsPinValid(pin);
-           if (IsPinValid)
-            {
-                Menimanager.PrikaziMeni();
-            }
+           // Menimanager.LoginMeni();
+           // pin = Console.ReadLine();
+           // bool IsPinValid = authmanager.IsPinValid(pin);
+           //if (IsPinValid)
+           // {
+           //     Menimanager.PrikaziMeni();
+           // }
            
 
             
