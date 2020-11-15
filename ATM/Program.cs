@@ -15,27 +15,27 @@ namespace ATM
         //git push origin main  
 
         //zadaci
-
-        
         
         //2.2 Ako pin nije validan ispisati korisniku da nije validan pin 
         //3. Omoguciti korisniku da unosi pin sve dok je netacan
-        static string pin = "";
-        static Meni Menimanager = new Meni();
-        static Authentication authmanager = new Authentication();
         
         static void Main(string[] args)
         {
-           // Menimanager.LoginMeni();
-           // pin = Console.ReadLine();
-           // bool IsPinValid = authmanager.IsPinValid(pin);
-           //if (IsPinValid)
-           // {
-           //     Menimanager.PrikaziMeni();
-           // }
-           
+            Meni Menimanager = new Meni();
+            Authentication Authmanager = new Authentication();
+            string Pin = "";
 
-            
+
+            Menimanager.LoginMeni();
+
+            Pin = Console.ReadLine();
+
+            bool IsPinValid = Authmanager.IsPinValid(Pin);
+
+            if (IsPinValid)
+            {
+                Menimanager.PrikaziMeni();
+            }
         }
     }
 }

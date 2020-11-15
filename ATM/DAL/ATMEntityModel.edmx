@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ATMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Kartica">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pinKartice" Type="varchar" MaxLength="4" />
+        </EntityType>
+        <EntityType Name="Transakcija">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nazivTransakcije" Type="varchar" MaxLength="7" />
+          <Property Name="kvantitetTransakcije" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="karticaId" Type="int" />
+        </EntityType>
+        <Association Name="FK__Transakci__karti__1273C1CD">
+          <End Role="Kartica" Type="Self.Kartica" Multiplicity="0..1" />
+          <End Role="Transakcija" Type="Self.Transakcija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kartica">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Transakcija">
+              <PropertyRef Name="karticaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ATMModelStoreContainer">
+          <EntitySet Name="Kartica" EntityType="Self.Kartica" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transakcija" EntityType="Self.Transakcija" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Transakci__karti__1273C1CD" Association="Self.FK__Transakci__karti__1273C1CD">
+            <End Role="Kartica" EntitySet="Kartica" />
+            <End Role="Transakcija" EntitySet="Transakcija" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ATMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Kartica">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pinKartice" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Transakcija" Relationship="Self.FK__Transakci__karti__1273C1CD" FromRole="Kartica" ToRole="Transakcija" />
+        </EntityType>
+        <EntityType Name="Transakcija">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nazivTransakcije" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="kvantitetTransakcije" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="karticaId" Type="Int32" />
+          <NavigationProperty Name="Kartica" Relationship="Self.FK__Transakci__karti__1273C1CD" FromRole="Transakcija" ToRole="Kartica" />
+        </EntityType>
+        <Association Name="FK__Transakci__karti__1273C1CD">
+          <End Role="Kartica" Type="Self.Kartica" Multiplicity="0..1" />
+          <End Role="Transakcija" Type="Self.Transakcija" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kartica">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Transakcija">
+              <PropertyRef Name="karticaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ATMEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Kartica" EntityType="Self.Kartica" />
+          <EntitySet Name="Transakcija" EntityType="Self.Transakcija" />
+          <AssociationSet Name="FK__Transakci__karti__1273C1CD" Association="Self.FK__Transakci__karti__1273C1CD">
+            <End Role="Kartica" EntitySet="Kartica" />
+            <End Role="Transakcija" EntitySet="Transakcija" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ATMModelStoreContainer" CdmEntityContainer="ATMEntities">
+          <EntitySetMapping Name="Kartica">
+            <EntityTypeMapping TypeName="ATMModel.Kartica">
+              <MappingFragment StoreEntitySet="Kartica">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="pinKartice" ColumnName="pinKartice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transakcija">
+            <EntityTypeMapping TypeName="ATMModel.Transakcija">
+              <MappingFragment StoreEntitySet="Transakcija">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nazivTransakcije" ColumnName="nazivTransakcije" />
+                <ScalarProperty Name="kvantitetTransakcije" ColumnName="kvantitetTransakcije" />
+                <ScalarProperty Name="karticaId" ColumnName="karticaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
