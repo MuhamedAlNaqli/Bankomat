@@ -16,29 +16,44 @@ namespace ATM
         
         static void Main(string[] args)
         {
+            string Pin = "";
+            int BrojPokusaja = 3;
             Meni Menimanager = new Meni();
             Authentication Authmanager = new Authentication();
-            string Pin = "";
-
+            
             Menimanager.LoginMeni();
-
-
-
-
-
-
-            //napraviti ponavljanje unosa pina, max 3 pogresna unosa od korisnika
-
+           
             Pin = Console.ReadLine();
+            
+            while (Pin != "0000")
+            {
+                
+                for (int i = 0; i < BrojPokusaja; i--)
+                {
+                    BrojPokusaja--;
+                    if (Pin == "0000")
+                    {
+                        Menimanager.PrikaziMeni();
+                        
+                    }
 
+                  
+                   else if(BrojPokusaja == 0)
+                    {
+                        Console.WriteLine("Vaša kartica je blokriana");
+                        Console.ReadLine();
+                        return;
+                    }
+                    Console.WriteLine("Unijeli ste netacan pin pokusajte ponovo");
+                    Console.ReadLine();
+
+
+
+                }
+            }
             bool IsPinValid = Authmanager.IsPinValid(Pin);
 
             //napraviti ponavljanje unosa pina, max 3 pogresna unosa od korisnika
-
-
-
-
-
 
             if (IsPinValid)
             {
@@ -52,3 +67,4 @@ namespace ATM
         }
     }
 }
+
