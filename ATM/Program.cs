@@ -47,10 +47,12 @@ namespace ATM
             while (Authmanager.IsPinValid(Pin))
             {
                 Menimanager.PrikaziMeni();
-               if (4)
+                opcije = Console.ReadLine();
+                if (opcije == "4")
                 {
                     return;
                 }
+               
             }
             
         }
