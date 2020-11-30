@@ -77,6 +77,7 @@
       <DependentUpon>ATMEntityModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Meni.cs" />
+    <Compile Include="Operacija.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

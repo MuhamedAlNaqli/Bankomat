@@ -22,5 +22,6 @@ namespace ATM
             Console.WriteLine("4............Izlaz");
             Console.ReadLine();
         }  
+
     }
 }
