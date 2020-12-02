@@ -13,15 +13,17 @@ namespace ATM
         //git add .
         //git commit -m "neka poruka"
         //git push origin main  
-        
+
         static void Main(string[] args)
         {
+            int racun = 500;
             string opcije = "";
             string Pin = "";
             int BrojPokusaja = 2;
             Meni Menimanager = new Meni();
             Authentication Authmanager = new Authentication();
-            
+            Operacija Menioperacija = new Operacija();
+
             Menimanager.LoginMeni();
             Pin = Console.ReadLine();
             while (!Authmanager.IsPinValid(Pin))
@@ -30,32 +32,43 @@ namespace ATM
                 BrojPokusaja--;
 
                 if (BrojPokusaja == 0)
-                    {
-                        Console.WriteLine("Vaša kartica je blokriana");
-                        Console.ReadLine();
-                        return;
-                    }
-                
+                {
+                    Console.WriteLine("Vaša kartica je blokriana");
+                    Console.ReadLine();
+                    return;
+                }
 
-
-                //napraviti ponavljanje menija sve dok korisnik ne odabere izlaz
-                //napraviti ponavljanje menija sve dok korisnik ne odabere izlaz
-                //izmjeniti funkciju PrikaziMeni da vrati korisnikov odabir sta zeli sa menija i spremiti u kontenjer
-                //napraviti novu klasu Operacija u kojoj ce biti smjestene sve stvari: Uplata, Isplata, Izlaz
             }
-
             while (Authmanager.IsPinValid(Pin))
             {
                 Menimanager.PrikaziMeni();
                 opcije = Console.ReadLine();
-                if (opcije == "4")
+                Console.Clear();
+                if (opcije == "1")
+                {
+                    Menioperacija.Uplata();
+                }
+                else if (opcije == "2")
+                {
+                    Menioperacija.Isplata();
+                }
+                else if (opcije == "3")
+                {
+                    Menioperacija.StanjeRacuna();
+                }
+                else if (opcije == "4")
                 {
                     return;
                 }
-               
+
+
             }
-            
+
         }
     }
 }
+//napraviti ponavljanje menija sve dok korisnik ne odabere izlaz
+//napraviti ponavljanje menija sve dok korisnik ne odabere izlaz
+//izmjeniti funkciju PrikaziMeni da vrati korisnikov odabir sta zeli sa menija i spremiti u kontenjer
+//napraviti novu klasu Operacija u kojoj ce biti smjestene sve stvari: Uplata, Isplata, Izlaz
 
