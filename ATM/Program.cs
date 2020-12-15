@@ -19,7 +19,7 @@ namespace ATM
             int racun = 500;
             string opcije = "";
             string Pin = "";
-            int BrojPokusaja = 2;
+            int BrojPokusaja = 3;
             Meni Menimanager = new Meni();
             Authentication Authmanager = new Authentication();
             Operacija Menioperacija = new Operacija();
@@ -28,16 +28,17 @@ namespace ATM
             Pin = Console.ReadLine();
             while (!Authmanager.IsPinValid(Pin))
             {
-                Pin = Console.ReadLine();
+                
                 BrojPokusaja--;
-
+                
                 if (BrojPokusaja == 0)
                 {
                     Console.WriteLine("Vaša kartica je blokriana");
                     Console.ReadLine();
                     return;
                 }
-
+                Console.WriteLine("Unesite vaš pin ponovo:");
+                Pin = Console.ReadLine();
             }
             while (Authmanager.IsPinValid(Pin))
             {

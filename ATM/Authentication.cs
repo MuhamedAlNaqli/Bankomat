@@ -18,7 +18,7 @@ namespace ATM
             if (kartica == null)
             { 
                 Console.WriteLine("Pin nije tacan!");
-                Console.ReadLine();
+                
                 return false;
             }
 
