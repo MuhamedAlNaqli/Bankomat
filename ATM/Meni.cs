@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 
 namespace ATM
-{
+{     
     public class Meni
     {
+        
         public void LoginMeni()
         {
             Console.WriteLine("Dobro dosli u ATM, molimo vas unesite vaš pin:");
         }
-        public void PrikaziMeni()
+         public  void PrikaziMeni ()
         {
             Console.WriteLine("Dobro došli u ATM bankomat");
             Console.WriteLine("Izaberite opciju");
@@ -23,6 +24,6 @@ namespace ATM
             Console.WriteLine("4............Izlaz");
             Console.ReadLine();
         }  
-
+          
     }
 }
